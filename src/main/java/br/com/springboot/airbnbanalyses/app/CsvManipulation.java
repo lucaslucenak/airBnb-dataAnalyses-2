@@ -48,17 +48,12 @@ public class CsvManipulation {
         return  csvToBean;
     }
 
-    public static void writeAlgorithmsFiles(String path ,Integer[] arrayId, String[] arrayName, Integer[] arrayHostId, String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, Double[] arrayLatitude, Double[] arrayLongitude, String[] arrayRoomType, Integer[] arrayPrice, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, String[] arrayLastReview, Double[] arrayReviewsPerMonth, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvaiability365) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
+    public static void writeAlgorithmsFiles(String path ,List<AirBnbListings> listings_review_date) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
         try {
 
             List<AirBnbListings> data = new ArrayList<>();
 
-            for (int i = 0; i < arrayId.length; i++) {
-                data.add(new AirBnbListings(arrayId[i], arrayName[i], arrayHostId[i], arrayHostName[i], arrayNeighbourhoodGroup[i],
-                        arrayNeighbourhood[i], arrayLatitude[i], arrayLongitude[i], arrayRoomType[i], arrayPrice[i],
-                        arrayMinimumNights[i], arrayNumberOfReviews[i], arrayLastReview[i], arrayReviewsPerMonth[i],
-                        arrayCalculatedHostListingsCount[i], arrayAvaiability365[i]));
-            }
+            data.addAll(listings_review_date);
 
             for (AirBnbListings i: data) {
                 System.out.println("entrou no for!!");

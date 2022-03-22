@@ -20,35 +20,36 @@ public class SelectionSortMethods {
 
         initialTime_mediumCase = System.nanoTime();
         SelectionSort.selectionSortCrescent(listings_review_date);
-        for (int i = 0; i < listings_review_date.size(); i++) {
-            System.out.println(listings_review_date.get(i).getPrice() + " " + listings_review_date.get(i).getId());
-        }
 
-        System.exit(0);
+//        for (int i = 0; i < listings_review_date.size(); i++) {
+//            System.out.println(listings_review_date.get(i).getPrice() + " " + listings_review_date.get(i).getId());
+//        }
+//
+//        System.exit(0);
 
         finalTime_mediumCase = System.nanoTime();
         executionTime_mediumCase = ((finalTime_mediumCase - initialTime_mediumCase) / 1000000d);
         executionTimes[0] = executionTime_mediumCase;
 
-//        writeAlgorithmsFiles(pathMedioCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
-//
-//        initialTime_bestCase = System.nanoTime();
-//        SelectionSort.selectionSortCrescent(arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvaiability365, arrayName, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, arrayReviewsPerMonth);
-//        finalTime_bestCase = System.nanoTime();
-//        executionTime_bestCase = ((finalTime_bestCase - initialTime_bestCase) / 1000000d);
-//        executionTimes[1] = executionTime_bestCase;
-//
-//        writeAlgorithmsFiles(pathMelhorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
-//
-//        SelectionSort.selectionSortDecrescent(arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvaiability365, arrayName, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, arrayReviewsPerMonth);
-//
-//        initialTime_worstCase = System.nanoTime();
-//        SelectionSort.selectionSortCrescent(arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvaiability365, arrayName, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, arrayReviewsPerMonth);
-//        finalTime_worstCase = System.nanoTime();
-//        executionTime_worstCase = ((finalTime_worstCase - initialTime_worstCase) / 1000000d);
-//        executionTimes[2] = executionTime_worstCase;
+        writeAlgorithmsFiles(pathMedioCaso, listings_review_date);
 
-//        writeAlgorithmsFiles(pathPiorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
+        initialTime_bestCase = System.nanoTime();
+        SelectionSort.selectionSortCrescent(listings_review_date);
+        finalTime_bestCase = System.nanoTime();
+        executionTime_bestCase = ((finalTime_bestCase - initialTime_bestCase) / 1000000d);
+        executionTimes[1] = executionTime_bestCase;
+
+        writeAlgorithmsFiles(pathMelhorCaso, listings_review_date);
+
+        SelectionSort.selectionSortDecrescent(listings_review_date);
+
+        initialTime_worstCase = System.nanoTime();
+        SelectionSort.selectionSortCrescent(listings_review_date);
+        finalTime_worstCase = System.nanoTime();
+        executionTime_worstCase = ((finalTime_worstCase - initialTime_worstCase) / 1000000d);
+        executionTimes[2] = executionTime_worstCase;
+
+        writeAlgorithmsFiles(pathPiorCaso, listings_review_date);
 
         return executionTimes;
     }
@@ -83,7 +84,7 @@ public class SelectionSortMethods {
 //        executionTime_worstCase = ((finalTime_worstCase - initialTime_worstCase) / 1000000d);
 //        executionTimes[2] = executionTime_worstCase;
 
-        writeAlgorithmsFiles(pathPiorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
+//        writeAlgorithmsFiles(pathPiorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
 
         return executionTimes;
     }
@@ -101,7 +102,7 @@ public class SelectionSortMethods {
         executionTime_mediumCase = ((finalTime_mediumCase - initialTime_mediumCase) / 1000000d);
         executionTimes[0] = executionTime_mediumCase;
 
-        writeAlgorithmsFiles(pathMedioCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
+//        writeAlgorithmsFiles(pathMedioCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
 
         initialTime_bestCase = System.nanoTime();
         SelectionSort.selectionSortCrescent_Names(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvaiability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude);
@@ -109,7 +110,7 @@ public class SelectionSortMethods {
         executionTime_bestCase = ((finalTime_bestCase - initialTime_bestCase) / 1000000d);
         executionTimes[1] = executionTime_bestCase;
 
-        writeAlgorithmsFiles(pathMelhorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
+//        writeAlgorithmsFiles(pathMelhorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
         SelectionSort.selectionSortDecrescent_Names(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvaiability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude);
 
         initialTime_worstCase = System.nanoTime();
@@ -118,7 +119,7 @@ public class SelectionSortMethods {
         executionTime_worstCase = ((finalTime_worstCase - initialTime_worstCase) / 1000000d);
         executionTimes[2] = executionTime_worstCase;
 
-        writeAlgorithmsFiles(pathPiorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
+//        writeAlgorithmsFiles(pathPiorCaso, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
 
         return executionTimes;
     }
