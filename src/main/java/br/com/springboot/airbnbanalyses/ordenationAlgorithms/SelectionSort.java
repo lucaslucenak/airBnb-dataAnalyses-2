@@ -2,9 +2,8 @@ package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 
 import br.com.springboot.airbnbanalyses.entities.AirBnbListings;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class SelectionSort {
 
@@ -31,15 +30,16 @@ public class SelectionSort {
                 if (listings_review_date.get(k).getPrice() > listings_review_date.get(j_maior).getPrice())
                     j_maior = k;
             }
-
             int key = listings_review_date.get(j).getPrice();
             Collections.swap(listings_review_date, j, j_maior);
             Collections.swap(listings_review_date, j_maior, key);
         }
     }
 
+
+
     public static void selectionSortCrescent_Names(String[] arrayName, Integer[] arrayPrice, Integer[] arrayId, Integer[] arrayHostId, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvailability365 ,
-                                       String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] arrayRoomType, String[] arrayLastReview, Double[] arrayLatitude, Double[] arrayLongitude){
+                                                   String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] arrayRoomType, String[] arrayLastReview, Double[] arrayLatitude, Double[] arrayLongitude){
 
         for (int j = 0; j < arrayName.length; j++) {
             int j_menor = j;
@@ -104,7 +104,7 @@ public class SelectionSort {
     }
 
     public static void selectionSortDecrescent_Names(String[] arrayName, Integer[] arrayPrice, Integer[] arrayId, Integer[] arrayHostId, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvailability365 ,
-                                              String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] arrayRoomType, String[] arrayLastReview, Double[] arrayLatitude, Double[] arrayLongitude){
+                                                     String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] arrayRoomType, String[] arrayLastReview, Double[] arrayLatitude, Double[] arrayLongitude){
 
         for (int j = 0; j < arrayName.length; j++) {
             int j_maior = j;

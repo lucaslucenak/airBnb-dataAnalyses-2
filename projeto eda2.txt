@@ -1,0 +1,3 @@
+no metodo de ordenacao selectionSort foi alterado o metodo de ordenação por preços para que fosse possível utilizar
+Collections.swap, tal implementação permitiu que o algoritmo de ordenação precisasse receber como parametro apenas
+a lista de objeto, e não todos os arrays (o msm pode ser feito para o numberOfReviews)
