@@ -161,7 +161,7 @@ public class AirBnbAnalysesApplication {
 
             do {
                 resetArrays(listings_review_date, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
-
+                listings_review_date = readCsv(CSV_LISTINGS_REVIEW_DATE).parse(); //Reseta a lista
                 System.out.println("Algoritmos de ordenação:\n" +
                         "1 - CountingSort\n" +
                         "2 - HeapSort\n" +
@@ -723,7 +723,7 @@ public class AirBnbAnalysesApplication {
     public static void resetArrays(List<AirBnbListings> listings_review_date, Integer[] arrayId, String[] arrayName, Integer[] arrayHostId,
                                    String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, Double[] arrayLatitude, Double[] arrayLongitude,
                                    String[] arrayRoomType, Integer[] arrayPrice, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews,
-                                   String[] arrayLastReview, Double[] arrayReviewsPerMonth, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvaiability365) {
+                                   String[] arrayLastReview, Double[] arrayReviewsPerMonth, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvaiability365) throws IOException {
 
         //Movendo todos os arquivos do objeto para um array simples
         int j = 0;
