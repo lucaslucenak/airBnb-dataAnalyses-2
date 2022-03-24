@@ -7,11 +7,10 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.*;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static br.com.springboot.airbnbanalyses.app.CsvManipulation.*;
+import static br.com.springboot.airbnbanalyses.ordenationAlgorithms.SelectionSort.selecionSortCrescent_fila;
 
 public class AirBnbAnalysesApplication {
 
@@ -138,6 +137,8 @@ public class AirBnbAnalysesApplication {
             System.out.println("Lendo e armazenando os valores do arquivo 'listings_review_date.csv'...");
             sleep(SLEEP_TIME);
             List<AirBnbListings> listings_review_date = readCsv(CSV_LISTINGS_REVIEW_DATE).parse(); //Armazenando os valores em memória
+
+            Queue<AirBnbListings> airBnbListingsQueue = new LinkedList<>();
 
             Integer[] arrayId = new Integer[listings_review_date.size()];
             String[] arrayName = new String[listings_review_date.size()];
@@ -687,6 +688,14 @@ public class AirBnbAnalysesApplication {
 
                 else if (opcaoAlgoritmo == 8) {
                     System.exit(0);
+                }
+
+                else if (opcaoAlgoritmo == 11) {
+                    selecionSortCrescent_fila(listings_review_date, airBnbListingsQueue);
+                    for(AirBnbListings filaM: airBnbListingsQueue){
+                        System.out.println("Imprimindo a fila com for: "+filaM.getPrice());
+                        sleep(1000);
+                    }
                 }
 
                 else {

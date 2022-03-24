@@ -1,5 +1,11 @@
 package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 
+import br.com.springboot.airbnbanalyses.entities.AirBnbListings;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 public class CountingSort {
     public static void countSortCrescent(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5,
                                                Integer[] array6, Integer[] array7, String[] array8, String[] array9, String[] array10, String[] array11,
@@ -90,4 +96,5 @@ public class CountingSort {
             array16[i] = array16Output[i];
         }
     }
+
 }

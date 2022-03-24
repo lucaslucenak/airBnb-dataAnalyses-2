@@ -1,5 +1,11 @@
 package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 
+import br.com.springboot.airbnbanalyses.entities.AirBnbListings;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Queue;
+
 public class InsertionSort {
 
     public static void insertionSortCrescent(Integer[] arrayPrice, Integer[] arrayId, Integer[] arrayHostId, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvailability365, String[] arrayName,
