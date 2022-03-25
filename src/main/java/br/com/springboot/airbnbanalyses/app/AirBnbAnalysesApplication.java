@@ -1,16 +1,34 @@
 package br.com.springboot.airbnbanalyses.app;
 
 import br.com.springboot.airbnbanalyses.entities.AirBnbListings;
+import br.com.springboot.airbnbanalyses.entities.AirBnbListingsDateFormated;
 import br.com.springboot.airbnbanalyses.ordenationMethods.*;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.*;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static br.com.springboot.airbnbanalyses.app.CsvManipulation.*;
 import static br.com.springboot.airbnbanalyses.ordenationAlgorithms.SelectionSort.selecionSortCrescent_fila;
+
+class AirBnbListingsDateFormatedComparator implements Comparator<AirBnbListingsDateFormated> {
+
+    @Override
+    public int compare(AirBnbListingsDateFormated airBnbListings1, AirBnbListingsDateFormated airBnbListings2) {
+        return airBnbListings1.getLast_review().compareTo(airBnbListings2.getLast_review());
+    }
+}
+
+class AirBnbListingsComparator implements Comparator<AirBnbListings> {
+
+    @Override
+    public int compare(AirBnbListings airBnbListings1, AirBnbListings airBnbListings2) {
+        return airBnbListings1.getName().compareTo(airBnbListings2.getName());
+    }
+}
 
 public class AirBnbAnalysesApplication {
 
@@ -21,14 +39,13 @@ public class AirBnbAnalysesApplication {
     * 3° - Após ajustar os endereços de criação dos arquivos, basta executar esta classe (AirBnbAnalysesApplication.java)
     */
 
-    private static final String USER = "lukki"; // Alterar para o seu usuário
-    private static final String FOLDER = "airBnb-dataAnalyses-list";
+//    private static final String USER = "lukki"; // Alterar para o seu usuário
+//    private static final String FOLDER = "airBnb-dataAnalyses-list";
     private static final int SLEEP_TIME = 3000;
 
 
     private static final String CSV_LISTINGS = "src\\main\\resources\\csvFiles\\listings.csv";
 
-//    private static final String CSV_LISTINGS = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings.csv";
     private static final String CSV_LISTINGS_REVIEW_DATE = "src\\main\\resources\\csvFiles\\listings_review_date.csv";
     private static final String CSV_LISTINGS_GT_AVG_PRICES = "src\\main\\resources\\csvFiles\\listings_gt_avg_prices.csv";
     private static final String CSV_LISTINGS_LT_AVG_PRICES = "src\\main\\resources\\csvFiles\\listings_lt_avg_prices.csv";
@@ -141,7 +158,54 @@ public class AirBnbAnalysesApplication {
             sleep(SLEEP_TIME);
             List<AirBnbListings> listings_review_date = readCsv(CSV_LISTINGS_REVIEW_DATE).parse(); //Armazenando os valores em memória
 
-            Queue<AirBnbListings> airBnbListingsQueue = new LinkedList<>();
+            Queue<AirBnbListings> airBnbListingsQueue = new LinkedList<>(); //Fila
+
+
+            NavigableSet<AirBnbListings> airBnbListingsNavigableSet = new TreeSet<>(new AirBnbListingsComparator()); //Arvore
+            airBnbListingsNavigableSet.addAll(listings_review_date);
+
+
+            List<AirBnbListingsDateFormated> airBnbListingsDate = new ArrayList<>(); //Lista para armazenar os objetos com a data tipo Date
+            List<AirBnbListings> unparseableDates = new ArrayList<>(); // Lista para armazenar objetos com problema na data
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+
+//            NavigableSet<AirBnbListingsDateFormated> airBnbListingsNavigableSet = new TreeSet<>(new AirBnbListingsDateFormatedComparator());
+
+
+
+//            for (int i =0; i< listings_review_date.size(); i++) {
+//                try {
+//                    //Auxiliar que pega o elemento i da lista normal
+//                    AirBnbListings aux = listings_review_date.get(i);
+//
+//                    //Converte o atributo data e armazena em dateFormat
+//                    Date dateFormat = format.parse(aux.getLast_review());
+//
+//                    //Cria o objeto e com o tipo date e adiciona na lista de objetos com o tipo Date
+//                    airBnbListingsDate.add(new AirBnbListingsDateFormated(aux.getId(), aux.getName(), aux.getHost_id(), aux.getHost_name(), aux.getNeighbourhood_group(),
+//                            aux.getNeighbourhood(), aux.getLatitude(), aux.getLongitude(), aux.getRoom_type(), aux.getPrice(), aux.getMinimum_nights(),
+//                            aux.getNumber_of_reviews(), dateFormat, aux.getReviews_per_month(), aux.getCalculated_host_listings_count(),
+//                            aux.getAvailability_365()));
+//
+//                } catch (Exception e) {
+//                    unparseableDates.add(listings_review_date.get(i));
+//                }
+//            }
+//
+//            airBnbListingsNavigableSet.addAll(airBnbListingsDate);
+//
+//            for(AirBnbListingsDateFormated i : airBnbListingsNavigableSet) {
+//                System.out.println(i.getLast_review());
+//            }
+
+
+
+            for(AirBnbListings i : airBnbListingsNavigableSet) {
+                System.out.println(i.getName());
+            }
+            System.exit(0);
+
 
             Integer[] arrayId = new Integer[listings_review_date.size()];
             String[] arrayName = new String[listings_review_date.size()];
