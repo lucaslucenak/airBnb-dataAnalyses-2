@@ -25,96 +25,99 @@ public class AirBnbAnalysesApplication {
     private static final String FOLDER = "airBnb-dataAnalyses-list";
     private static final int SLEEP_TIME = 3000;
 
-    private static final String CSV_LISTINGS = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings.csv";
-    private static final String CSV_LISTINGS_REVIEW_DATE = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings_review_date.csv";
-    private static final String CSV_LISTINGS_GT_AVG_PRICES = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings_gt_avg_prices.csv";
-    private static final String CSV_LISTINGS_LT_AVG_PRICES = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings_lt_avg_prices.csv";
+
+    private static final String CSV_LISTINGS = "src\\main\\resources\\csvFiles\\listings.csv";
+
+//    private static final String CSV_LISTINGS = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\csvFiles\\listings.csv";
+    private static final String CSV_LISTINGS_REVIEW_DATE = "src\\main\\resources\\csvFiles\\listings_review_date.csv";
+    private static final String CSV_LISTINGS_GT_AVG_PRICES = "src\\main\\resources\\csvFiles\\listings_gt_avg_prices.csv";
+    private static final String CSV_LISTINGS_LT_AVG_PRICES = "src\\main\\resources\\csvFiles\\listings_lt_avg_prices.csv";
 
 
 
-    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_COUNTINGSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_prices_countingSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_COUNTINGSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\countingSort\\listings_numberOfReviews_countingSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_HEAPSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_HEAPSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_HEAPSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_HEAPSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_HEAPSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_HEAPSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_prices_heapSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_HEAPSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_HEAPSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_HEAPSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_HEAPSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_HEAPSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_HEAPSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_names_heapSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_HEAPSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\heapSort\\listings_numberOfReviews_heapSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_INSERTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_names_insertionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_INSERTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_prices_insertionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_MERGESORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_MERGESORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_MERGESORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_MERGESORT_MEDIOCASO = "Csrc\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_MERGESORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_MERGESORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_MERGESORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_MERGESORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_MERGESORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_MERGESORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_MERGESORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_MERGESORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_prices_mergeSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_MERGESORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_numberOfReviews_mergeSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_prices_quickSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_names_quickSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\airBnb-dataAnalyses\\src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort\\listings_numberOfReviews_quickSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_QUICKSORT_MD3_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_names_quickSort_md3_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_piorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_QUICKSORT_MD3_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_numberOfReviews_quickSort_md3_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_QUICKSORT_MD3_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\quickSort_MedianaDe3\\listings_price_quickSort_md3_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_SELECTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_names_selectionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_LIST = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_medioCaso_list.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_LIST = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso_list.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_LIST = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso_list.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_LIST = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_medioCaso_list.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_LIST = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso_list.csv";
+    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_LIST = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso_list.csv";
 
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MEDIOCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_medioCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_PIORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_melhorCaso.csv";
-    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MELHORCASO = "C:\\Users\\"+USER+"\\Desktop\\"+FOLDER+"\\src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_piorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_melhorCaso.csv";
+    private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_piorCaso.csv";
 
 
     public static void main (String []args) {
