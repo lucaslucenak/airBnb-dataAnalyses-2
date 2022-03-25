@@ -151,13 +151,17 @@ public class AirBnbAnalysesApplication {
             sleep(SLEEP_TIME);
             List<AirBnbListings> listings_review_date = readCsv(CSV_LISTINGS_REVIEW_DATE).parse(); //Armazenando os valores em memória
 
-            Queue<AirBnbListings> airBnbListingsQueue = new LinkedList<>(); //Fila
-
-
             //-------------------------------------------------TreeSet-------------------------------------------------//
+            long initialTime, finalTime;
+            double executionTime;
             //Criação da árvore, ordenação por nomes e criação do arquivo "listings_names_treeset.csv"
             NavigableSet<AirBnbListings> airBnbListingsNavigableSet = new TreeSet<>(new AirBnbListingsComparator()); //Arvore
+
+            initialTime = System.nanoTime();
             airBnbListingsNavigableSet.addAll(listings_review_date);
+            finalTime = System.nanoTime();
+            executionTime = ((finalTime - initialTime) / 1000000d);
+
             writeAlgorithmsFiles_treeSet(CSV_LISTINGS_NAMES_TREESET, airBnbListingsNavigableSet);
 
 
@@ -185,6 +189,7 @@ public class AirBnbAnalysesApplication {
             do {
                 resetArrays(listings_review_date, arrayId, arrayName, arrayHostId, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayLatitude, arrayLongitude, arrayRoomType, arrayPrice, arrayMinimumNights, arrayNumberOfReviews, arrayLastReview, arrayReviewsPerMonth, arrayCalculatedHostListingsCount, arrayAvaiability365);
                 listings_review_date = readCsv(CSV_LISTINGS_REVIEW_DATE).parse(); //Reseta a lista
+                System.out.println("Tempo de execução da TreeSet: " + executionTime);
                 System.out.println("Algoritmos de ordenação:\n" +
                         "1 - CountingSort\n" +
                         "2 - HeapSort\n" +
@@ -695,12 +700,12 @@ public class AirBnbAnalysesApplication {
                                 arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, arrayReviewsPerMonth);
                     }
                     else if (opcaoParametro == 5) {
-                        double[] selectionSort_Prices_executionTimes;
+                        double[] selectionSort_Prices_executionTimes_list;
 
-                        selectionSort_Prices_executionTimes = SelectionSortMethods.selectionSort_Prices_List(CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_LIST,
+                        selectionSort_Prices_executionTimes_list = SelectionSortMethods.selectionSort_Prices_List(CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_LIST,
                                 CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_LIST, CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_LIST, listings_review_date);
-
-                        printExecutionTimes(selectionSort_Prices_executionTimes);
+                        sleep(SLEEP_TIME);
+                        printExecutionTimes(selectionSort_Prices_executionTimes_list);
                     }
 
                     else {
@@ -710,14 +715,6 @@ public class AirBnbAnalysesApplication {
 
                 else if (opcaoAlgoritmo == 8) {
                     System.exit(0);
-                }
-
-                else if (opcaoAlgoritmo == 11) {
-                    selecionSortCrescent_fila(listings_review_date, airBnbListingsQueue);
-                    for(AirBnbListings filaM: airBnbListingsQueue){
-                        System.out.println("Imprimindo a fila com for: "+filaM.getPrice());
-                        sleep(1000);
-                    }
                 }
 
                 else {

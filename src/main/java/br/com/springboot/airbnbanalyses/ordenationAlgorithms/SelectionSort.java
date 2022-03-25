@@ -1,6 +1,6 @@
 package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 
-import br.com.springboot.airbnbanalyses.dataStructures.fila.Fila;
+
 import br.com.springboot.airbnbanalyses.entities.AirBnbListings;
 
 import java.util.*;
@@ -23,11 +23,8 @@ public class SelectionSort {
             Collections.swap(listings_review_date, j_menor, key);
 
             airBnbListingsQueue.add(listings_review_date.get(key));
-
-//            Fila.adicionar(listings_review_date.get(j));
         }
 
-//        Fila.mostrar();
     }
 
     public static void selectionSortCrescent_List(List<AirBnbListings> listings_review_date) {

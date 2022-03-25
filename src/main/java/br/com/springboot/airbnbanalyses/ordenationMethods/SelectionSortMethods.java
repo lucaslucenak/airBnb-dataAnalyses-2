@@ -9,10 +9,13 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
+import static br.com.springboot.airbnbanalyses.app.AirBnbAnalysesApplication.sleep;
 import static br.com.springboot.airbnbanalyses.app.CsvManipulation.writeAlgorithmsFiles_arrays;
 import static br.com.springboot.airbnbanalyses.app.CsvManipulation.writeAlgorithmsFiles_objectList;
 
 public class SelectionSortMethods {
+    private static final int SLEEP_TIME = 5000;
+
     public static double[] selectionSort_Prices_List(String pathMedioCaso, String pathMelhorCaso, String pathPiorCaso, List<AirBnbListings> listings_review_date) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException, ParseException {
 
         long initialTime_mediumCase, initialTime_bestCase, initialTime_worstCase, finalTime_mediumCase, finalTime_bestCase, finalTime_worstCase;
@@ -46,6 +49,11 @@ public class SelectionSortMethods {
         executionTimes[2] = executionTime_worstCase;
 
         writeAlgorithmsFiles_objectList(pathPiorCaso, listings_review_date);
+
+        System.out.println("Tempo de execução pior caso: " + executionTimes[0]);
+        System.out.println("Tempo de execução médio caso: " + executionTimes[1]);
+        System.out.println("Tempo de execução melhor caso: " + executionTimes[2]);
+        sleep(SLEEP_TIME);
 
         return executionTimes;
     }
