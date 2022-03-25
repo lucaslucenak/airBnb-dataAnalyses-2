@@ -14,14 +14,6 @@ import java.util.*;
 import static br.com.springboot.airbnbanalyses.app.CsvManipulation.*;
 import static br.com.springboot.airbnbanalyses.ordenationAlgorithms.SelectionSort.selecionSortCrescent_fila;
 
-class AirBnbListingsDateFormatedComparator implements Comparator<AirBnbListingsDateFormated> {
-
-    @Override
-    public int compare(AirBnbListingsDateFormated airBnbListings1, AirBnbListingsDateFormated airBnbListings2) {
-        return airBnbListings1.getLast_review().compareTo(airBnbListings2.getLast_review());
-    }
-}
-
 class AirBnbListingsComparator implements Comparator<AirBnbListings> {
 
     @Override
@@ -136,6 +128,7 @@ public class AirBnbAnalysesApplication {
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_melhorCaso.csv";
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_piorCaso.csv";
 
+    private static final String CSV_LISTINGS_NAMES_TREESET = "src\\main\\resources\\ordenatedCsvFiles\\TreeSet\\listings_names_treeset.csv";
 
     public static void main (String []args) {
         try {
@@ -161,52 +154,14 @@ public class AirBnbAnalysesApplication {
             Queue<AirBnbListings> airBnbListingsQueue = new LinkedList<>(); //Fila
 
 
+            //-------------------------------------------------TreeSet-------------------------------------------------//
+            //Criação da árvore, ordenação por nomes e criação do arquivo "listings_names_treeset.csv"
             NavigableSet<AirBnbListings> airBnbListingsNavigableSet = new TreeSet<>(new AirBnbListingsComparator()); //Arvore
             airBnbListingsNavigableSet.addAll(listings_review_date);
+            writeAlgorithmsFiles_treeSet(CSV_LISTINGS_NAMES_TREESET, airBnbListingsNavigableSet);
 
 
-            List<AirBnbListingsDateFormated> airBnbListingsDate = new ArrayList<>(); //Lista para armazenar os objetos com a data tipo Date
-            List<AirBnbListings> unparseableDates = new ArrayList<>(); // Lista para armazenar objetos com problema na data
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
-
-//            NavigableSet<AirBnbListingsDateFormated> airBnbListingsNavigableSet = new TreeSet<>(new AirBnbListingsDateFormatedComparator());
-
-
-
-//            for (int i =0; i< listings_review_date.size(); i++) {
-//                try {
-//                    //Auxiliar que pega o elemento i da lista normal
-//                    AirBnbListings aux = listings_review_date.get(i);
-//
-//                    //Converte o atributo data e armazena em dateFormat
-//                    Date dateFormat = format.parse(aux.getLast_review());
-//
-//                    //Cria o objeto e com o tipo date e adiciona na lista de objetos com o tipo Date
-//                    airBnbListingsDate.add(new AirBnbListingsDateFormated(aux.getId(), aux.getName(), aux.getHost_id(), aux.getHost_name(), aux.getNeighbourhood_group(),
-//                            aux.getNeighbourhood(), aux.getLatitude(), aux.getLongitude(), aux.getRoom_type(), aux.getPrice(), aux.getMinimum_nights(),
-//                            aux.getNumber_of_reviews(), dateFormat, aux.getReviews_per_month(), aux.getCalculated_host_listings_count(),
-//                            aux.getAvailability_365()));
-//
-//                } catch (Exception e) {
-//                    unparseableDates.add(listings_review_date.get(i));
-//                }
-//            }
-//
-//            airBnbListingsNavigableSet.addAll(airBnbListingsDate);
-//
-//            for(AirBnbListingsDateFormated i : airBnbListingsNavigableSet) {
-//                System.out.println(i.getLast_review());
-//            }
-
-
-
-            for(AirBnbListings i : airBnbListingsNavigableSet) {
-                System.out.println(i.getName());
-            }
-            System.exit(0);
-
-
+            //----------------------------------------Arrays para os atributos-----------------------------------------//
             Integer[] arrayId = new Integer[listings_review_date.size()];
             String[] arrayName = new String[listings_review_date.size()];
             Integer[] arrayHostId = new Integer[listings_review_date.size()];

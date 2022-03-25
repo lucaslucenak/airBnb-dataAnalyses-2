@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.NavigableSet;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -48,17 +49,29 @@ public class CsvManipulation {
         return  csvToBean;
     }
 
+    public static void writeAlgorithmsFiles_treeSet(String path, NavigableSet<AirBnbListings> airBnbListingsNavigableSet) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
+        try {
+
+            List<AirBnbListings> data = new ArrayList<>();
+
+            data.addAll(airBnbListingsNavigableSet);
+
+            Writer writer = Files.newBufferedWriter(Paths.get(path));
+            StatefulBeanToCsv<AirBnbListings> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            beanToCsv.write(data);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void writeAlgorithmsFiles_objectList(String path ,List<AirBnbListings> listings_review_date) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
         try {
 
             List<AirBnbListings> data = new ArrayList<>();
 
             data.addAll(listings_review_date);
-
-            for (AirBnbListings i: data) {
-                System.out.println("entrou no for!!");
-                System.out.println(i);;
-            }
 
             Writer writer = Files.newBufferedWriter(Paths.get(path));
             StatefulBeanToCsv<AirBnbListings> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
@@ -80,11 +93,6 @@ public class CsvManipulation {
                         arrayNeighbourhood[i], arrayLatitude[i], arrayLongitude[i], arrayRoomType[i], arrayPrice[i],
                         arrayMinimumNights[i], arrayNumberOfReviews[i], arrayLastReview[i], arrayReviewsPerMonth[i],
                         arrayCalculatedHostListingsCount[i], arrayAvaiability365[i]));
-            }
-
-            for (AirBnbListings i: data) {
-                System.out.println("entrou no for!!");
-                System.out.println(i);;
             }
 
             Writer writer = Files.newBufferedWriter(Paths.get(path));
