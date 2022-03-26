@@ -1,4 +1,4 @@
-# airBnb-dataAnalyses-springBoot
+# airBnb-dataAnalyses-2
 
 <h1 align="center">Projeto AirBnB</h1>
 <h2>Componentes: </h2>
