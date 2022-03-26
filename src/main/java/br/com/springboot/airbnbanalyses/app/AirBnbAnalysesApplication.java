@@ -124,10 +124,6 @@ public class AirBnbAnalysesApplication {
     private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_LIST = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso_list.csv";
     private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_LIST = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso_list.csv";
 
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_HASHSET = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_medioCaso_hashSet.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_HASHSET = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_piorCaso_hashSet.csv";
-    private static final String CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_HASHSET = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_price_selectionSort_melhorCaso_hashSet.csv";
-
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_medioCaso.csv";
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_melhorCaso.csv";
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_SELECTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\selectionSort\\listings_numberOfReviews_selectionSort_piorCaso.csv";
@@ -167,10 +163,6 @@ public class AirBnbAnalysesApplication {
             executionTime = ((finalTime - initialTime) / 1000000d);
 
             writeAlgorithmsFiles_treeSet(CSV_LISTINGS_NAMES_TREESET, airBnbListingsNavigableSet);
-
-            //-------------------------------------------------HashSet-------------------------------------------------//
-            Set<AirBnbListings> airBnbListingsSet = new LinkedHashSet<>();
-            airBnbListingsSet.addAll(listings_review_date);
 
 
             //----------------------------------------Arrays para os atributos-----------------------------------------//
@@ -725,13 +717,6 @@ public class AirBnbAnalysesApplication {
                 else if (opcaoAlgoritmo == 8) {
                     System.exit(0);
                 }
-
-                else if (opcaoAlgoritmo == 11) {
-                    SelectionSortMethods.selectionSort_Prices_HashMap(CSV_LISTINGS_PRICE_SELECTIONSORT_MEDIOCASO_HASHSET,
-                            CSV_LISTINGS_PRICE_SELECTIONSORT_MELHORCASO_HASHSET,
-                            CSV_LISTINGS_PRICE_SELECTIONSORT_PIORCASO_HASHSET, listings_review_date, airBnbListingsSet);
-                }
-
                 else {
                     System.out.println("Opção inválida.\n");
                 }

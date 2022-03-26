@@ -16,49 +16,6 @@ import static br.com.springboot.airbnbanalyses.app.CsvManipulation.*;
 public class SelectionSortMethods {
     private static final int SLEEP_TIME = 5000;
 
-    public static double[] selectionSort_Prices_HashMap(String pathMedioCaso, String pathMelhorCaso, String pathPiorCaso, List<AirBnbListings> listings_review_date, Set<AirBnbListings> airBnbListingsSet) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException, ParseException {
-
-        long initialTime_mediumCase, initialTime_bestCase, initialTime_worstCase, finalTime_mediumCase, finalTime_bestCase, finalTime_worstCase;
-        double executionTime_mediumCase, executionTime_bestCase, executionTime_worstCase;
-        double[] executionTimes = new double[3];
-
-        initialTime_mediumCase = System.nanoTime();
-        SelectionSort.selecionSortCrescent_hashSet(listings_review_date);
-        airBnbListingsSet.addAll(listings_review_date);
-        finalTime_mediumCase = System.nanoTime();
-        executionTime_mediumCase = ((finalTime_mediumCase - initialTime_mediumCase) / 1000000d);
-        executionTimes[0] = executionTime_mediumCase;
-
-        writeAlgorithmsFiles_HashSet(pathMedioCaso, airBnbListingsSet);
-
-        initialTime_bestCase = System.nanoTime();
-        SelectionSort.selecionSortCrescent_hashSet(listings_review_date);
-        airBnbListingsSet.addAll(listings_review_date);
-        finalTime_bestCase = System.nanoTime();
-        executionTime_bestCase = ((finalTime_bestCase - initialTime_bestCase) / 1000000d);
-        executionTimes[1] = executionTime_bestCase;
-
-        writeAlgorithmsFiles_HashSet(pathMelhorCaso, airBnbListingsSet);
-
-        SelectionSort.selectionSortDecrescent_HashSet(listings_review_date, airBnbListingsSet);
-
-        initialTime_worstCase = System.nanoTime();
-        SelectionSort.selecionSortCrescent_hashSet(listings_review_date);
-        airBnbListingsSet.addAll(listings_review_date);
-        finalTime_worstCase = System.nanoTime();
-        executionTime_worstCase = ((finalTime_worstCase - initialTime_worstCase) / 1000000d);
-        executionTimes[2] = executionTime_worstCase;
-
-        writeAlgorithmsFiles_HashSet(pathPiorCaso, airBnbListingsSet);
-
-        System.out.println("Tempo de execução pior caso: " + executionTimes[0]);
-        System.out.println("Tempo de execução médio caso: " + executionTimes[1]);
-        System.out.println("Tempo de execução melhor caso: " + executionTimes[2]);
-        sleep(SLEEP_TIME);
-
-        return executionTimes;
-    }
-
     public static double[] selectionSort_Prices_List(String pathMedioCaso, String pathMelhorCaso, String pathPiorCaso, List<AirBnbListings> listings_review_date) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException, ParseException {
 
         long initialTime_mediumCase, initialTime_bestCase, initialTime_worstCase, finalTime_mediumCase, finalTime_bestCase, finalTime_worstCase;
