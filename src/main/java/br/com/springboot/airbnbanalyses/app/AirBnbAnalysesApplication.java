@@ -23,16 +23,6 @@ class AirBnbListingsComparator implements Comparator<AirBnbListings> {
 }
 
 public class AirBnbAnalysesApplication {
-
-    /*
-    * Para que os arquivos sejam gerados corretamente é necessário que:
-    * 1° - O clone do projeto seja realizado na área de trabalho (para evitar ter que trocar os parâmetros das constantes)
-    * 2° - O valor da constante "USER" seja alterado para o nome do usuário que está logado no Windows
-    * 3° - Após ajustar os endereços de criação dos arquivos, basta executar esta classe (AirBnbAnalysesApplication.java)
-    */
-
-//    private static final String USER = "lukki"; // Alterar para o seu usuário
-//    private static final String FOLDER = "airBnb-dataAnalyses-list";
     private static final int SLEEP_TIME = 3000;
 
 
@@ -76,7 +66,7 @@ public class AirBnbAnalysesApplication {
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_piorCaso.csv";
     private static final String CSV_LISTINGS_NUMBEROFREVIEWS_INSERTIONSORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\insertionSort\\listings_numberOfReviews_insertionSort_melhorCaso.csv";
 
-    private static final String CSV_LISTINGS_NAMES_MERGESORT_MEDIOCASO = "Csrc\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_medioCaso.csv";
+    private static final String CSV_LISTINGS_NAMES_MERGESORT_MEDIOCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_medioCaso.csv";
     private static final String CSV_LISTINGS_NAMES_MERGESORT_PIORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_piorCaso.csv";
     private static final String CSV_LISTINGS_NAMES_MERGESORT_MELHORCASO = "src\\main\\resources\\ordenatedCsvFiles\\mergeSort\\listings_names_mergeSort_melhorCaso.csv";
 
