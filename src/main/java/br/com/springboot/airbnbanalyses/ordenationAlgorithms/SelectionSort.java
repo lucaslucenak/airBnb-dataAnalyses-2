@@ -7,7 +7,45 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class SelectionSort {
-    public static void selecionSortCrescent_fila(List<AirBnbListings> listings_review_date, Queue<AirBnbListings> airBnbListingsQueue) {
+    public static void selecionSortCrescent_hashSet(List<AirBnbListings> listings_review_date) {
+
+        for (int j = 0; j < listings_review_date.size(); j++) {
+            int j_menor = j;
+            for (int k = j + 1; k < listings_review_date.size(); k++){
+                if (listings_review_date.get(k).getPrice() < listings_review_date.get(j_menor).getPrice())
+                    j_menor = k;
+            }
+
+            int key = listings_review_date.get(j).getPrice();
+            int posicionJmenor;
+            for (int i = 0; i < listings_review_date.size(); i++) {
+
+            }
+            Collections.swap(listings_review_date, j, j_menor);
+            Collections.swap(listings_review_date, j_menor, key);
+
+//            airBnbListingsSet.add(listings_review_date.get(key));
+        }
+
+    }
+
+    public static void selectionSortDecrescent_HashSet(List<AirBnbListings> listings_review_date, Set<AirBnbListings> airBnbListingsSet) {
+
+        for (int j = 0; j < listings_review_date.size(); j++) {
+            int j_maior = j;
+            for (int k = j + 1; k < listings_review_date.size(); k++){
+                if (listings_review_date.get(k).getPrice() > listings_review_date.get(j_maior).getPrice())
+                    j_maior = k;
+            }
+            int key = listings_review_date.get(j).getPrice();
+            Collections.swap(listings_review_date, j, j_maior);
+            Collections.swap(listings_review_date, j_maior, key);
+
+            airBnbListingsSet.add(listings_review_date.get(key));
+        }
+    }
+
+    public static void selecionSortCrescent_fila(List<AirBnbListings> listings_review_date) {
 
         for (int j = 0; j < listings_review_date.size(); j++) {
             int j_menor = j;
@@ -21,8 +59,6 @@ public class SelectionSort {
             int key = listings_review_date.get(j).getPrice();
             Collections.swap(listings_review_date, j, j_menor);
             Collections.swap(listings_review_date, j_menor, key);
-
-            airBnbListingsQueue.add(listings_review_date.get(key));
         }
 
     }

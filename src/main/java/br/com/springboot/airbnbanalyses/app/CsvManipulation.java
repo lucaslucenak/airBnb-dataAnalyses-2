@@ -8,10 +8,7 @@ import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.NavigableSet;
+import java.util.*;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -47,6 +44,23 @@ public class CsvManipulation {
         Reader reader = Files.newBufferedReader(Paths.get(path));
         CsvToBean csvToBean = new CsvToBeanBuilder(reader).withType(AirBnbListings.class).build();
         return  csvToBean;
+    }
+
+    public static void writeAlgorithmsFiles_HashSet(String path, Set<AirBnbListings> airBnbListingsSet) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
+        try {
+
+            List<AirBnbListings> data = new ArrayList<>();
+
+            data.addAll(airBnbListingsSet);
+
+            Writer writer = Files.newBufferedWriter(Paths.get(path));
+            StatefulBeanToCsv<AirBnbListings> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            beanToCsv.write(data);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void writeAlgorithmsFiles_treeSet(String path, NavigableSet<AirBnbListings> airBnbListingsNavigableSet) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, ParseException {
